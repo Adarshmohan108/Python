@@ -1,0 +1,31 @@
+#creating class fan
+class fan:
+    #function to initialize the object
+    def __init__(self,data): 
+        self.data=data   #Assigning the data
+        self.ref=None   #Initializing the next object as none
+class dependency:    # Creating a linked list
+    def __init__(self):
+        self.start=None #Initially the list will be empty at the time of creation  
+    
+    def printList(self): #This fucntion prints the contents of the list
+        temp = self.start 
+        while (temp): #checking if the list has an item
+            print (temp.data," ")
+            temp = temp.ref
+    
+if __name__=='__main__': 
+  
+    # Start with the empty list 
+    linkedlist = dependency() 
+  
+    linkedlist.start = fan("f3") 
+    second = fan("f2") 
+    third = fan("f1") 
+  
+    linkedlist.start.ref = second; # Link first node with second 
+    second.ref = third; # Link second node with the third node 
+  
+    linkedlist.printList() 
+    
+    
